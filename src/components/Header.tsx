@@ -13,20 +13,10 @@ export const Header: React.FC = () => {
     <header className="sticky top-0 z-40 bg-paoWine-800 text-white shadow-soft-xl border-b border-paoGold-500/30">
       <div className="max-w-4xl mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
-          
+
           {/* Restaurant Brand Identity */}
           <div className="flex items-center space-x-3">
-            <div className="w-11 h-11 rounded-2xl bg-paoWine-900 border border-paoGold-500/60 p-1 flex-shrink-0 flex items-center justify-center shadow-inner">
-              <svg viewBox="0 0 192 192" className="w-full h-full">
-                <circle cx="96" cy="96" r="80" fill="none" stroke="#D4AF37" strokeWidth="3"/>
-                <g transform="translate(46, 42)">
-                  <path d="M50,20 C50,20 60,35 50,50 C40,35 50,20 50,20 Z" fill="#E6C280"/>
-                  <path d="M 30,55 Q 15,40 30,30 Q 50,15 70,30 Q 85,40 70,55 Z" fill="#FFFFFF"/>
-                  <path d="M 28,52 Q 25,70 30,75 H 70 Q 75,70 72,52 Z" fill="#FFFFFF"/>
-                  <path d="M 30,75 H 70 V 82 H 30 Z" fill="#D4AF37"/>
-                </g>
-              </svg>
-            </div>
+            <img src="/logo.png" alt="Restaurante Pão da Vida Logo" className="w-12 h-12 object-contain flex-shrink-0 drop-shadow-md" />
 
             <div>
               <div className="flex items-center space-x-2">
@@ -39,7 +29,7 @@ export const Header: React.FC = () => {
                 </span>
               </div>
 
-              <button 
+              <button
                 onClick={() => setShowAddressModal(true)}
                 className="flex items-center text-xs text-paoSand-300 hover:text-paoGold-300 transition-colors text-left"
               >
@@ -92,7 +82,7 @@ export const Header: React.FC = () => {
             {RESTAURANT_INFO.phone}
           </span>
         </div>
-        <button 
+        <button
           onClick={() => setShowAddressModal(true)}
           className="text-paoGold-400 hover:underline flex items-center font-medium ml-2"
         >
@@ -109,7 +99,7 @@ export const Header: React.FC = () => {
               <h3 className="font-serif text-lg font-bold text-paoWine-800">
                 Restaurante Pão da Vida
               </h3>
-              <button 
+              <button
                 onClick={() => setShowAddressModal(false)}
                 className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 font-bold hover:bg-gray-200"
               >

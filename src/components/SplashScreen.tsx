@@ -30,18 +30,8 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({ onFinish }) => {
         {/* Animated Badge Icon */}
         <div className="relative">
           <div className="absolute -inset-4 bg-paoGold-500/20 rounded-full blur-xl animate-pulseSlow"></div>
-          <div className="w-32 h-32 rounded-3xl bg-paoWine-900 border-2 border-paoGold-500/80 shadow-gold-glow flex items-center justify-center p-4 relative z-10">
-            <svg viewBox="0 0 192 192" className="w-full h-full">
-              <circle cx="96" cy="96" r="80" fill="none" stroke="#D4AF37" strokeWidth="2" strokeDasharray="6 4"/>
-              <g transform="translate(46, 42)">
-                <path d="M50,20 C50,20 60,35 50,50 C40,35 50,20 50,20 Z" fill="#E6C280"/>
-                <path d="M35,30 C35,30 45,40 40,55 C30,45 35,30 35,30 Z" fill="#D4AF37"/>
-                <path d="M65,30 C65,30 55,40 60,55 C70,45 65,30 65,30 Z" fill="#D4AF37"/>
-                <path d="M 30,55 Q 15,40 30,30 Q 50,15 70,30 Q 85,40 70,55 Z" fill="#FFFFFF"/>
-                <path d="M 28,52 Q 25,70 30,75 H 70 Q 75,70 72,52 Z" fill="#FFFFFF"/>
-                <path d="M 30,75 H 70 V 82 H 30 Z" fill="#D4AF37"/>
-              </g>
-            </svg>
+          <div className="w-36 h-36 rounded-3xl bg-paoWine-900/90 border-2 border-paoGold-500/80 shadow-gold-glow flex items-center justify-center p-4 relative z-10 overflow-hidden">
+            <img src="/logo.png" alt="Restaurante Pão da Vida Logo" className="w-full h-full object-contain filter drop-shadow-lg" />
           </div>
         </div>
 
