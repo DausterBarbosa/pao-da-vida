@@ -5,7 +5,7 @@ import type { CategoryId, Product } from './types';
 import { SplashScreen } from './components/SplashScreen';
 import { Header } from './components/Header';
 import { InstallPwaBanner } from './components/InstallPwaBanner';
-import { PromoBanner } from './components/PromoBanner';
+import { ImageCarousel } from './components/ImageCarousel';
 import { SearchBar } from './components/SearchBar';
 import { CategoryNav } from './components/CategoryNav';
 import { ProductCard } from './components/ProductCard';
@@ -31,7 +31,7 @@ function AppContent() {
 
     if (searchQuery.trim().length > 0) {
       const q = searchQuery.toLowerCase().trim();
-      result = result.filter(p => 
+      result = result.filter(p =>
         p.name.toLowerCase().includes(q) ||
         p.description.toLowerCase().includes(q) ||
         (p.code && p.code.toLowerCase().includes(q)) ||
@@ -52,30 +52,30 @@ function AppContent() {
       {showSplash && <SplashScreen onFinish={() => setShowSplash(false)} />}
 
       <div className="min-h-screen flex flex-col bg-paoSand-100">
-        
+
         {/* Header with Restaurant Info */}
         <Header />
 
         {/* PWA Install Banner */}
         <InstallPwaBanner />
 
+        {/* Carrossel de imagens */}
+        <ImageCarousel
+          onSelectCategory={(catId) => {
+            setActiveCategory(catId as CategoryId);
+            setSearchQuery('');
+          }}
+        />
+
         {/* Main Content Area */}
         <main className="flex-1 max-w-4xl w-full mx-auto px-4 py-2 space-y-4">
-          
+
           {/* Search Bar */}
           <SearchBar
             searchQuery={searchQuery}
             onSearchChange={setSearchQuery}
             resultCount={searchQuery ? filteredProducts.length : undefined}
           />
-
-          {/* Promotional Banners */}
-          {!searchQuery && (
-            <PromoBanner onSelectCategory={(catId) => {
-              setActiveCategory(catId);
-              setSearchQuery('');
-            }} />
-          )}
 
           {/* Horizontal Category Scroll */}
           <CategoryNav
